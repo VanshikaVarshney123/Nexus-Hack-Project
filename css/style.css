@@ -64,6 +64,16 @@
 /* --------------------------------------------------------------------------
    2. Reset & Global Base
    -------------------------------------------------------------------------- */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.75;
+}
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -894,6 +904,191 @@ h1, h2, h3, h4, .brand-name {
 }
 
 /* --------------------------------------------------------------------------
+   8B. Speakers & Mentors Section
+   -------------------------------------------------------------------------- */
+.speaker-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+}
+
+.speaker-filter-btn {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(20, 23, 34, 0.7);
+  border: 1px solid var(--border-subtle);
+  padding: 0.55rem 1.3rem;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.speaker-filter-btn:hover {
+  color: #FFFFFF;
+  border-color: var(--border-medium);
+}
+
+.speaker-filter-btn.active {
+  background: var(--color-volt);
+  color: #07080B;
+  border-color: var(--color-volt);
+  box-shadow: 0 4px 14px rgba(0, 245, 155, 0.35);
+  font-weight: 700;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.speaker-card {
+  position: relative;
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-glow-volt);
+  box-shadow: var(--shadow-md), var(--glow-volt);
+}
+
+.speaker-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-volt);
+  background: rgba(0, 245, 155, 0.1);
+  border: 1px solid rgba(0, 245, 155, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.speaker-badge.badge-coral {
+  color: var(--color-coral);
+  background: rgba(255, 92, 53, 0.1);
+  border-color: rgba(255, 92, 53, 0.25);
+}
+
+.speaker-badge.badge-gold {
+  color: var(--color-gold);
+  background: rgba(255, 209, 102, 0.1);
+  border-color: rgba(255, 209, 102, 0.25);
+}
+
+.speaker-avatar-wrap {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 1.25rem auto;
+}
+
+.speaker-avatar-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.speaker-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.speaker-name {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.speaker-role {
+  color: var(--text-dim);
+  font-size: 0.8125rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+.speaker-topic {
+  background: rgba(20, 23, 34, 0.85);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.topic-label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-volt);
+  margin-bottom: 0.35rem;
+}
+
+.topic-title {
+  font-size: 0.8125rem;
+  color: #FFFFFF;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.btn-speaker-bio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.btn-speaker-bio:hover {
+  color: #FFFFFF;
+  border-color: var(--border-medium);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bio-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn-speaker-bio.active .bio-arrow {
+  transform: rotate(180deg);
+}
+
+.speaker-bio-drawer {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: var(--bg-surface);
+  border-left: 2px solid var(--color-volt);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
    9. Schedule Timeline Section
    -------------------------------------------------------------------------- */
 .schedule-tabs {
@@ -1678,6 +1873,10 @@ h1, h2, h3, h4, .brand-name {
     grid-template-columns: 1fr;
   }
 
+  .speakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .prizes-grid {
     grid-template-columns: 1fr;
     max-width: 480px;
@@ -1767,6 +1966,10 @@ h1, h2, h3, h4, .brand-name {
   }
 
   .sponsors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .speakers-grid {
     grid-template-columns: 1fr;
   }
 

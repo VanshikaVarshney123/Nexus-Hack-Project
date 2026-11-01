@@ -412,11 +412,216 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /* --------------------------------------------------------------------------
-     8. Initialize All Modules
+     8. Interactive Pixel Constellation Canvas (Prompt 2 Pixel Engine)
      -------------------------------------------------------------------------- */
+  const initPixelConstellation = () => {
+    const canvas = document.getElementById('bg-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    let particles = [];
+    const particleCount = window.innerWidth < 768 ? 25 : 55;
+    const colors = [
+      'rgba(0, 245, 155, 0.7)',  // Electric Volt
+      'rgba(56, 189, 248, 0.6)',  // Sky Cyan
+      'rgba(255, 92, 53, 0.55)',  // Sunset Tangerine
+      'rgba(255, 209, 102, 0.6)'  // Sunburst Gold
+    ];
+
+    const mouse = {
+      x: null,
+      y: null,
+      radius: 140
+    };
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }, { passive: true });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.7;
+        this.vy = (Math.random() - 0.5) * 0.7;
+        this.radius = Math.random() * 1.8 + 1.2;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.isSquare = Math.random() > 0.5; // Visual homage to "Pixels"
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce on boundaries
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Mouse magnetic repel
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            const dirX = dx / dist;
+            const dirY = dy / dist;
+            this.x -= dirX * force * 2.5;
+            this.y -= dirY * force * 2.5;
+          }
+        }
+      }
+
+      draw() {
+        ctx.fillStyle = this.color;
+        if (this.isSquare) {
+          // Pixel Cube Node
+          ctx.fillRect(this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius * 2);
+        } else {
+          // Circular Node
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    const connectParticles = () => {
+      const maxDistance = 115;
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a + 1; b < particles.length; b++) {
+          const dx = particles[a].x - particles[b].x;
+          const dy = particles[a].y - particles[b].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < maxDistance) {
+            const alpha = (1 - dist / maxDistance) * 0.18;
+            ctx.strokeStyle = `rgba(0, 245, 155, ${alpha})`;
+            ctx.lineWidth = 0.85;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+
+        // Connect to mouse cursor
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - particles[a].x;
+          const dy = mouse.y - particles[a].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 130) {
+            const alpha = (1 - dist / 130) * 0.35;
+            ctx.strokeStyle = `rgba(0, 245, 155, ${alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+      });
+
+      connectParticles();
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+  };
+
+  /* --------------------------------------------------------------------------
+     9. Interactive Speakers & Mentors Filtering and Abstract Drawers
+     -------------------------------------------------------------------------- */
+  const initSpeakerInteractions = () => {
+    const filterBtns = document.querySelectorAll('.speaker-filter-btn');
+    const speakerCards = document.querySelectorAll('.speaker-card');
+    const bioBtns = document.querySelectorAll('.btn-speaker-bio');
+
+    // Filter speakers
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filter = btn.getAttribute('data-filter');
+
+        speakerCards.forEach((card) => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            card.style.opacity = '0';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.3s ease';
+              card.style.opacity = '1';
+            }, 10);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Bio drawer toggle
+    bioBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.speaker-card');
+        const drawer = card.querySelector('.speaker-bio-drawer');
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.classList.remove('active');
+          drawer.setAttribute('hidden', 'true');
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.classList.add('active');
+          drawer.removeAttribute('hidden');
+        }
+      });
+    });
+  };
+
+  /* --------------------------------------------------------------------------
+     10. Initialize All Modules
+     -------------------------------------------------------------------------- */
+  initPixelConstellation();
   initCountdown();
   initNavigation();
   initTrackFilters();
+  initSpeakerInteractions();
   initScheduleTabs();
   initFaqAccordion();
   initRegistrationModal();

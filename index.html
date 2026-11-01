@@ -17,6 +17,11 @@
 <body>
 
   <!-- ========================================================
+       0. INTERACTIVE PIXEL CONSTELLATION CANVAS (Prompt 2 Pixel)
+       ======================================================== -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========================================================
        1. NAVBAR (Responsive Header with Mobile Menu & Brand)
        ======================================================== -->
   <header class="header" id="header">
@@ -46,6 +51,7 @@
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#tracks" class="nav-link">Tracks</a></li>
+        <li><a href="#speakers" class="nav-link">Speakers</a></li>
         <li><a href="#schedule" class="nav-link">Schedule</a></li>
         <li><a href="#prizes" class="nav-link">Prizes</a></li>
         <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
@@ -73,6 +79,7 @@
       <ul class="mobile-nav-links" role="list">
         <li><a href="#about" class="mobile-nav-link">About Event</a></li>
         <li><a href="#tracks" class="mobile-nav-link">Challenge Tracks</a></li>
+        <li><a href="#speakers" class="mobile-nav-link">Speakers & Mentors</a></li>
         <li><a href="#schedule" class="mobile-nav-link">Event Schedule</a></li>
         <li><a href="#prizes" class="mobile-nav-link">Prizes & Rewards</a></li>
         <li><a href="#sponsors" class="mobile-nav-link">Partners & Sponsors</a></li>
@@ -412,6 +419,142 @@
               <span class="tag">Google Cloud</span>
               <span class="tag">Serverless</span>
               <span class="tag">Zero-Trust</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4B. KEYNOTE SPEAKERS & MENTORS SECTION (Bonus Feature)
+         ======================================================== -->
+    <section class="speakers-section section-padding" id="speakers">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">INDUSTRY MENTORS & LEADERS</span>
+          <h2 class="section-title">Learn from World-Class Builders</h2>
+          <p class="section-desc">
+            Direct access to senior AI researchers, Google Developer Experts, and cloud architects dedicated to guiding and evaluating your team.
+          </p>
+        </div>
+
+        <!-- Speaker Category Filters -->
+        <div class="speaker-filters" role="tablist" aria-label="Filter Speakers and Mentors">
+          <button class="speaker-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Mentors & Keynotes</button>
+          <button class="speaker-filter-btn" data-filter="keynote" role="tab" aria-selected="false">Keynote Speakers</button>
+          <button class="speaker-filter-btn" data-filter="mentor" role="tab" aria-selected="false">Domain Mentors</button>
+        </div>
+
+        <div class="speakers-grid" id="speakers-grid">
+          <!-- Speaker 1 -->
+          <article class="speaker-card" data-category="keynote">
+            <div class="speaker-badge">Keynote</div>
+            <div class="speaker-avatar-wrap" aria-hidden="true">
+              <svg class="speaker-avatar-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="#141722" stroke="#00F59B" stroke-width="2"/>
+                <circle cx="50" cy="40" r="18" fill="#1B202E" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <path d="M22 84c0-15.464 12.536-28 28-28s28 12.536 28 28" fill="#0D0F15" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <circle cx="68" cy="32" r="5" fill="#00F59B"/>
+              </svg>
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Dr. Elena Rostova</h3>
+              <p class="speaker-role">Staff AI Scientist • GenAI Research</p>
+              <div class="speaker-topic">
+                <span class="topic-label">Keynote Session</span>
+                <p class="topic-title">"From Prompts to Autonomous Production: The 2026 Multimodal Shift"</p>
+              </div>
+              <button class="btn-speaker-bio" aria-expanded="false">
+                <span>View Abstract</span>
+                <span class="bio-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="speaker-bio-drawer" hidden>
+                <p>Exploring real-time LLM inference, vision-language reasoning, and how student developers can build resilient, latency-free AI pipelines in under 36 hours.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Speaker 2 -->
+          <article class="speaker-card" data-category="keynote">
+            <div class="speaker-badge">Keynote</div>
+            <div class="speaker-avatar-wrap" aria-hidden="true">
+              <svg class="speaker-avatar-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="#141722" stroke="#38BDF8" stroke-width="2"/>
+                <circle cx="50" cy="40" r="18" fill="#1B202E" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <path d="M22 84c0-15.464 12.536-28 28-28s28 12.536 28 28" fill="#0D0F15" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <circle cx="68" cy="32" r="5" fill="#38BDF8"/>
+              </svg>
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Karan Varma</h3>
+              <p class="speaker-role">Google Developer Expert • Web Technologies</p>
+              <div class="speaker-topic">
+                <span class="topic-label">Design Masterclass</span>
+                <p class="topic-title">"Pixel-Craft: Micro-Interactions, 60fps CSS & Accessibility at Scale"</p>
+              </div>
+              <button class="btn-speaker-bio" aria-expanded="false">
+                <span>View Abstract</span>
+                <span class="bio-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="speaker-bio-drawer" hidden>
+                <p>How to architect responsive web prototypes that delight judges instantly, with high-performance CSS transforms, zero layout shifts, and semantic web standards.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Speaker 3 -->
+          <article class="speaker-card" data-category="mentor">
+            <div class="speaker-badge badge-coral">Cloud Mentor</div>
+            <div class="speaker-avatar-wrap" aria-hidden="true">
+              <svg class="speaker-avatar-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="#141722" stroke="#FF5C35" stroke-width="2"/>
+                <circle cx="50" cy="40" r="18" fill="#1B202E" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <path d="M22 84c0-15.464 12.536-28 28-28s28 12.536 28 28" fill="#0D0F15" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <circle cx="68" cy="32" r="5" fill="#FF5C35"/>
+              </svg>
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Sarah Chen</h3>
+              <p class="speaker-role">Principal Architect • OpenScale Cloud</p>
+              <div class="speaker-topic">
+                <span class="topic-label">Mentorship Clinic</span>
+                <p class="topic-title">"Zero-Downtime APIs, Serverless Architecture & Cloud Security"</p>
+              </div>
+              <button class="btn-speaker-bio" aria-expanded="false">
+                <span>View Abstract</span>
+                <span class="bio-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="speaker-bio-drawer" hidden>
+                <p>Sarah will be on-site across both days offering 1-on-1 office hours for teams building distributed backends, REST endpoints, and security guardrails.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Speaker 4 -->
+          <article class="speaker-card" data-category="mentor">
+            <div class="speaker-badge badge-gold">Design Mentor</div>
+            <div class="speaker-avatar-wrap" aria-hidden="true">
+              <svg class="speaker-avatar-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="#141722" stroke="#FFD166" stroke-width="2"/>
+                <circle cx="50" cy="40" r="18" fill="#1B202E" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <path d="M22 84c0-15.464 12.536-28 28-28s28 12.536 28 28" fill="#0D0F15" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <circle cx="68" cy="32" r="5" fill="#FFD166"/>
+              </svg>
+            </div>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Marcus Brody</h3>
+              <p class="speaker-role">Staff Design Technologist • A11y Vanguard</p>
+              <div class="speaker-topic">
+                <span class="topic-label">Mentorship Clinic</span>
+                <p class="topic-title">"Inclusive UI/UX, Screen Readers & Modern Typography"</p>
+              </div>
+              <button class="btn-speaker-bio" aria-expanded="false">
+                <span>View Abstract</span>
+                <span class="bio-arrow" aria-hidden="true">↓</span>
+              </button>
+              <div class="speaker-bio-drawer" hidden>
+                <p>Assisting hackathon teams with color contrast audits, ARIA landmarks, keyboard tab accessibility, and polish for their live jury presentations.</p>
+              </div>
             </div>
           </article>
         </div>
