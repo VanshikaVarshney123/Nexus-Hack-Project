@@ -91,17 +91,24 @@ def create_deck(output_path):
     p3.alignment = PP_ALIGN.CENTER
 
     p4 = tf.add_paragraph()
-    p4.text = "\nTrack: Problem Statement 02 — Tech Event / Hackathon Landing Page\nOrganized by: GDG Student Developer Community (Sample Chapter)\nCore Stack: Semantic HTML5 • Modern CSS3 • Pure Vanilla JavaScript"
-    p4.font.size = Pt(13)
-    p4.font.color.rgb = TEXT_MUTED
+    p4.text = "\n✨ Designed & Engineered by: Vanshika Varshney"
+    p4.font.size = Pt(16)
+    p4.font.bold = True
+    p4.font.color.rgb = VOLT_COLOR
     p4.alignment = PP_ALIGN.CENTER
 
     p5 = tf.add_paragraph()
-    p5.text = "\nGitHub: github.com/VanshikaVarshney123/Nexus-Hack-Project  •  Live on Netlify"
+    p5.text = "Track: Problem Statement 02 (Tech Event / Hackathon Landing Page)\nOrganized by: GDG Student Developer Community (Sample Chapter)\nCore Stack: Semantic HTML5 • Modern CSS3 • Pure Vanilla JavaScript"
     p5.font.size = Pt(12)
-    p5.font.bold = True
-    p5.font.color.rgb = GOLD_COLOR
+    p5.font.color.rgb = TEXT_MUTED
     p5.alignment = PP_ALIGN.CENTER
+
+    p6 = tf.add_paragraph()
+    p6.text = "\nGitHub: github.com/VanshikaVarshney123/Nexus-Hack-Project  •  Live on Netlify"
+    p6.font.size = Pt(12)
+    p6.font.bold = True
+    p6.font.color.rgb = GOLD_COLOR
+    p6.alignment = PP_ALIGN.CENTER
 
     # =========================================================================
     # SLIDE 2: Problem Statement & Event Vision
@@ -336,6 +343,16 @@ def create_deck(output_path):
         p3.text = f"\n{content}"
         p3.font.size = Pt(12)
         p3.font.color.rgb = TEXT_MUTED
+
+    # Author & Submitter Footer
+    f_box = s5.shapes.add_textbox(Inches(0.8), Inches(6.8), Inches(11.7), Inches(0.4))
+    tf_f = f_box.text_frame
+    pf = tf_f.paragraphs[0]
+    pf.text = "✨ Designed & Engineered by Vanshika Varshney  •  GDG Prompt 2 Pixel (Round 2)"
+    pf.font.size = Pt(11.5)
+    pf.font.bold = True
+    pf.font.color.rgb = VOLT_COLOR
+    pf.alignment = PP_ALIGN.CENTER
 
     prs.save(output_path)
     print(f"Successfully generated 5-slide pitch deck at: {output_path}")
