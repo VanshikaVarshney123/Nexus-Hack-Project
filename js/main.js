@@ -615,13 +615,108 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /* --------------------------------------------------------------------------
-     10. Initialize All Modules
+     10. Keynote Speaker Audio Speech & Soundwave Equalizer (Web Speech API)
+     -------------------------------------------------------------------------- */
+  const initSpeakerVoiceEngine = () => {
+    const audioBtns = document.querySelectorAll('.btn-speaker-audio');
+    if (!audioBtns.length) return;
+
+    // Speaker Speech Transcripts
+    const speakerVoiceScripts = {
+      elena: "Hello builders! I am Doctor Elena Rostova. In my keynote at NEXUS HACK 2026, I will break down how you can transform generative AI prompts into robust, real-time autonomous systems. Get ready to build!",
+      karan: "Hey everyone, Karan Varma here! As a Google Developer Expert in Web, I'll be sharing how to craft 60 frames-per-second micro-interactions and pixel-perfect responsive layouts that leave a lasting impression. Let's make every pixel count!",
+      sarah: "Hi hackers, I'm Sarah Chen. I'll be in the mentor pods helping you deploy zero-downtime APIs, serverless Google Cloud architecture, and secure databases. Don't hesitate to pull me into your team pod!",
+      marcus: "Welcome to NEXUS HACK! I'm Marcus Brody, your UX and Accessibility mentor. I will help ensure your prototypes pass WCAG AAA standards with flawless keyboard navigation and high contrast design. Good luck!"
+    };
+
+    let activeSpeechBtn = null;
+
+    const stopActiveAudio = () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      if (activeSpeechBtn) {
+        activeSpeechBtn.classList.remove('playing');
+        const textSpan = activeSpeechBtn.querySelector('.audio-btn-text');
+        if (textSpan) textSpan.textContent = 'Voice Teaser';
+        activeSpeechBtn = null;
+      }
+    };
+
+    audioBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const speakerKey = btn.getAttribute('data-speaker');
+        const textToSpeak = speakerVoiceScripts[speakerKey];
+
+        // If clicking the currently playing button, stop it
+        if (btn === activeSpeechBtn && btn.classList.contains('playing')) {
+          stopActiveAudio();
+          showToast('Audio preview paused.', 'info');
+          return;
+        }
+
+        // Stop any currently playing audio
+        stopActiveAudio();
+
+        if (!('speechSynthesis' in window)) {
+          showToast('Web Speech API is not supported on this browser.', 'error');
+          return;
+        }
+
+        // Create utterance
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+
+        // Try to select an English voice
+        const voices = window.speechSynthesis.getVoices();
+        const englishVoice = voices.find((v) => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Online')));
+        if (englishVoice) {
+          utterance.voice = englishVoice;
+        }
+
+        // UI state update
+        btn.classList.add('playing');
+        const textSpan = btn.querySelector('.audio-btn-text');
+        if (textSpan) textSpan.textContent = 'Speaking...';
+        activeSpeechBtn = btn;
+
+        const card = btn.closest('.speaker-card');
+        const speakerName = card ? card.querySelector('.speaker-name').textContent : 'Speaker';
+        showToast(`🔊 Playing voice intro: ${speakerName}`, 'info');
+
+        utterance.onend = () => {
+          btn.classList.remove('playing');
+          if (textSpan) textSpan.textContent = 'Voice Teaser';
+          activeSpeechBtn = null;
+        };
+
+        utterance.onerror = () => {
+          btn.classList.remove('playing');
+          if (textSpan) textSpan.textContent = 'Voice Teaser';
+          activeSpeechBtn = null;
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    });
+
+    // Stop speaking if page is hidden / navigated away
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopActiveAudio();
+    });
+  };
+
+  /* --------------------------------------------------------------------------
+     11. Initialize All Modules
      -------------------------------------------------------------------------- */
   initPixelConstellation();
   initCountdown();
   initNavigation();
   initTrackFilters();
   initSpeakerInteractions();
+  initSpeakerVoiceEngine();
   initScheduleTabs();
   initFaqAccordion();
   initRegistrationModal();

@@ -1,0 +1,31 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Shield / Nexus Geometry -->
+  <rect x="6" y="6" width="108" height="108" rx="30" fill="#0D0F15" stroke="rgba(255, 255, 255, 0.12)" stroke-width="2"/>
+  
+  <!-- Subtle Inner Ambient Glow -->
+  <circle cx="60" cy="60" r="42" fill="url(#logo-radial-glow)" opacity="0.35"/>
+
+  <!-- Left: The Prompt Chevron ">" (Electric Volt) -->
+  <path d="M30 38L52 60L30 82" stroke="#00F59B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Center Transformation Spark -->
+  <circle cx="62" cy="60" r="4" fill="#38BDF8"/>
+
+  <!-- Right: The Pixel Matrix (Prompt to Pixel Evolution) -->
+  <!-- Pixel 1: Upper Right (Sky Cyan) -->
+  <rect x="72" y="36" width="18" height="18" rx="4" fill="#38BDF8" transform="rotate(45 72 36)"/>
+  
+  <!-- Pixel 2: Center Right (Electric Volt) -->
+  <rect x="85" y="52" width="16" height="16" rx="4" fill="#00F59B" transform="rotate(45 85 52)"/>
+
+  <!-- Pixel 3: Lower Right (Sunset Coral) -->
+  <rect x="72" y="68" width="18" height="18" rx="4" fill="#FF5C35" transform="rotate(45 72 68)"/>
+
+  <!-- Definitions -->
+  <defs>
+    <radialGradient id="logo-radial-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(60 60) rotate(90) scale(42)">
+      <stop stop-color="#00F59B"/>
+      <stop offset="1" stop-color="#00F59B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
