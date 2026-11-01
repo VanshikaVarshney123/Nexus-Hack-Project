@@ -68,13 +68,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNav = document.getElementById('mobile-nav');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-    // Sticky header glass darkening on scroll
+    // Sticky header glass darkening on scroll & Active Link Observer
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
+      const scrollPos = window.scrollY;
+
+      // Darken header on scroll
+      if (scrollPos > 40) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
+
+      // Scroll Spy for nav links
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
     }, { passive: true });
 
     // Mobile drawer toggle
@@ -252,11 +275,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (firstInput) setTimeout(() => firstInput.focus(), 100);
     };
 
-    // Close Modal
+    // Close Modal with complete state reset
     const closeModal = () => {
       backdrop.classList.remove('open');
       backdrop.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+
+      // Reset modal view back to clean form for next open
+      setTimeout(() => {
+        if (regSuccess && !regSuccess.hasAttribute('hidden')) {
+          regSuccess.setAttribute('hidden', 'true');
+          regForm.style.display = 'block';
+          regForm.reset();
+        }
+      }, 300);
     };
 
     openBtns.forEach(btn => btn.addEventListener('click', openModal));
