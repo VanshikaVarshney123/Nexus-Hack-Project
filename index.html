@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXUS HACK 2026: Prompt to Production. Where Prompts Ignite Code and Pixels Shape the Future. Organized by GDG Student Developer Community (Sample Chapter).">
+  <title>NEXUS HACK 2026 | Prompt to Production</title>
+  
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       1. NAVBAR (Responsive Header with Mobile Menu & Brand)
+       ======================================================== -->
+  <header class="header" id="header">
+    <nav class="navbar container" aria-label="Main Navigation">
+      <a href="#hero" class="brand" aria-label="NEXUS HACK 2026 Home">
+        <span class="brand-logo" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="28" height="28" rx="8" fill="url(#brand-grad)"/>
+            <path d="M7 14L12 9L17 14L12 19L7 14Z" fill="#FFFFFF"/>
+            <path d="M14 9L19 14L14 19L11 16L14 13L14 9Z" fill="#38BDF8"/>
+            <defs>
+              <linearGradient id="brand-grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4285F4"/>
+                <stop offset="0.5" stop-color="#34A853"/>
+                <stop offset="1" stop-color="#FBBC04"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">NEXUS<span class="highlight">HACK</span></span>
+          <span class="brand-badge">2026</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#tracks" class="nav-link">Tracks</a></li>
+        <li><a href="#schedule" class="nav-link">Schedule</a></li>
+        <li><a href="#prizes" class="nav-link">Prizes</a></li>
+        <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <!-- Action Button & Mobile Toggle -->
+      <div class="nav-actions">
+        <button class="btn btn-primary nav-cta open-modal-btn" aria-label="Open registration form">
+          Register Now
+          <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="#about" class="mobile-nav-link">About Event</a></li>
+        <li><a href="#tracks" class="mobile-nav-link">Challenge Tracks</a></li>
+        <li><a href="#schedule" class="mobile-nav-link">Event Schedule</a></li>
+        <li><a href="#prizes" class="mobile-nav-link">Prizes & Rewards</a></li>
+        <li><a href="#sponsors" class="mobile-nav-link">Partners & Sponsors</a></li>
+        <li><a href="#faq" class="mobile-nav-link">Frequently Asked Questions</a></li>
+        <li class="mobile-cta-wrapper">
+          <button class="btn btn-primary btn-block open-modal-btn">Register for Hackathon</button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========================================================
+         2. HERO SECTION (Title, Tagline, Date/Format, Visual & Countdown)
+         ======================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-bg-glow hero-glow-2" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Community Pill -->
+          <div class="hero-pill animate-fade-in">
+            <span class="pill-dot"></span>
+            <span class="pill-text">Organized by <strong>GDG Student Developer Community</strong> (Sample Chapter)</span>
+          </div>
+
+          <!-- Main Headlines -->
+          <h1 class="hero-title">
+            NEXUS HACK <span class="gradient-text">2026</span>
+            <span class="hero-subtitle">Prompt to Production</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Where Prompts Ignite Code and Pixels Shape the Future. Join 500+ builders, creators, and engineers in an intense 36-hour sprint turning breakthrough ideas into deployed reality.
+          </p>
+
+          <!-- Key Event Meta Pills -->
+          <div class="event-meta-grid" role="list" aria-label="Key Event Details">
+            <div class="meta-item" role="listitem">
+              <span class="meta-icon" aria-hidden="true">📅</span>
+              <div>
+                <span class="meta-label">Date</span>
+                <strong class="meta-value">Nov 21–22, 2026</strong>
+              </div>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-icon" aria-hidden="true">📍</span>
+              <div>
+                <span class="meta-label">Format</span>
+                <strong class="meta-value">Hybrid (Campus Arena & Virtual)</strong>
+              </div>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-icon" aria-hidden="true">🏆</span>
+              <div>
+                <span class="meta-label">Sample Prize Pool</span>
+                <strong class="meta-value">$15,000+ in Rewards</strong>
+              </div>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-icon" aria-hidden="true">⚡</span>
+              <div>
+                <span class="meta-label">Eligibility</span>
+                <strong class="meta-value">Open to All Students</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary CTA Buttons -->
+          <div class="hero-buttons">
+            <button class="btn btn-primary btn-lg open-modal-btn">
+              Register Free Now
+              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <a href="#tracks" class="btn btn-secondary btn-lg">
+              Explore Tracks
+            </a>
+          </div>
+
+          <!-- Live Countdown Timer -->
+          <div class="countdown-card" aria-label="Countdown to Hackathon Kickoff">
+            <span class="countdown-title">⚡ HACKATHON KICKOFF IN:</span>
+            <div class="countdown-grid" id="countdown-timer">
+              <div class="countdown-unit">
+                <span class="countdown-val" id="days">20</span>
+                <span class="countdown-lbl">Days</span>
+              </div>
+              <span class="countdown-separator" aria-hidden="true">:</span>
+              <div class="countdown-unit">
+                <span class="countdown-val" id="hours">14</span>
+                <span class="countdown-lbl">Hours</span>
+              </div>
+              <span class="countdown-separator" aria-hidden="true">:</span>
+              <div class="countdown-unit">
+                <span class="countdown-val" id="minutes">45</span>
+                <span class="countdown-lbl">Minutes</span>
+              </div>
+              <span class="countdown-separator" aria-hidden="true">:</span>
+              <div class="countdown-unit">
+                <span class="countdown-val" id="seconds">30</span>
+                <span class="countdown-lbl">Seconds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Illustration -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-frame">
+            <svg class="hero-illustration" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Backdrop Glow Elements -->
+              <circle cx="270" cy="230" r="180" fill="url(#hero-circle-grad)" opacity="0.3"/>
+              
+              <!-- Code & Pixel Canvas Board -->
+              <rect x="40" y="40" width="460" height="340" rx="20" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+              <rect x="40" y="40" width="460" height="42" rx="20" fill="#1E293B"/>
+              
+              <!-- Window Dots -->
+              <circle cx="65" cy="61" r="6" fill="#EF4444"/>
+              <circle cx="85" cy="61" r="6" fill="#F59E0B"/>
+              <circle cx="105" cy="61" r="6" fill="#10B981"/>
+              
+              <!-- Terminal Window Text -->
+              <rect x="135" y="53" width="160" height="16" rx="4" fill="#334155"/>
+              
+              <!-- Left: The Prompt (Input) -->
+              <rect x="65" y="105" width="180" height="120" rx="12" fill="#1E293B" stroke="#4285F4" stroke-width="1.5"/>
+              <path d="M80 125H180M80 145H220M80 165H160" stroke="#94A3B8" stroke-width="3" stroke-linecap="round"/>
+              <rect x="80" y="185" width="110" height="24" rx="6" fill="#4285F4" opacity="0.3"/>
+              <text x="90" y="201" fill="#38BDF8" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600">&gt; Prompt.init()</text>
+
+              <!-- Central Morphing Beam / Converter -->
+              <path d="M255 165C280 165 280 230 305 230" stroke="url(#beam-grad)" stroke-width="3" stroke-dasharray="6 6"/>
+              <circle cx="280" cy="198" r="16" fill="#34A853"/>
+              <path d="M275 198L279 202L286 194" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- Right: The Pixel (Output Reality) -->
+              <rect x="315" y="160" width="160" height="140" rx="12" fill="#1E293B" stroke="#34A853" stroke-width="1.5"/>
+              <rect x="330" y="180" width="60" height="40" rx="6" fill="#38BDF8" opacity="0.7"/>
+              <rect x="400" y="180" width="60" height="40" rx="6" fill="#F43F5E" opacity="0.7"/>
+              <rect x="330" y="230" width="130" height="18" rx="4" fill="#E2E8F0" opacity="0.8"/>
+              <rect x="330" y="258" width="90" height="22" rx="6" fill="#34A853"/>
+              <text x="345" y="273" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700">PIXEL READY</text>
+
+              <!-- Floating Pixel Cubes -->
+              <rect x="80" y="260" width="36" height="36" rx="8" fill="#FBBC04" transform="rotate(-12 80 260)"/>
+              <rect x="230" y="280" width="28" height="28" rx="6" fill="#EA4335" transform="rotate(18 230 280)"/>
+              <rect x="450" y="90" width="40" height="40" rx="8" fill="#4285F4" transform="rotate(25 450 90)"/>
+
+              <defs>
+                <radialGradient id="hero-circle-grad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(270 230) rotate(90) scale(180)">
+                  <stop stop-color="#4285F4"/>
+                  <stop offset="1" stop-color="#4285F4" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="beam-grad" x1="255" y1="165" x2="305" y2="230" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4285F4"/>
+                  <stop offset="1" stop-color="#34A853"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="visual-badge">
+              <span class="live-pulse" aria-hidden="true"></span>
+              <span>100% Free • Open to Global Participants</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. ABOUT SECTION (Overview, Goals, Audience & Highlights)
+         ======================================================== -->
+    <section class="about-section section-padding" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">ABOUT THE HACKATHON</span>
+          <h2 class="section-title">Built by Developers, for Future Innovators</h2>
+          <p class="section-desc">
+            Organized under the spirit of the GDG Student Developer Community, NEXUS HACK 2026 bridges the gap between abstract generative AI prompts and robust, real-world pixel deployments.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Mission Card -->
+          <article class="about-card highlight-card">
+            <div class="card-icon" aria-hidden="true">💡</div>
+            <h3>Our Mission</h3>
+            <p>
+              We believe prompting is the new programming language, but true engineering lies in transforming raw intelligence into accessible, intuitive, and high-impact digital experiences. Our goal is to empower student builders to ship functional solutions within 36 hours.
+            </p>
+          </article>
+
+          <!-- Who Should Join Card -->
+          <article class="about-card">
+            <div class="card-icon" aria-hidden="true">🚀</div>
+            <h3>Who Can Participate?</h3>
+            <p>
+              Whether you are a first-year student writing your first HTML tag, an experienced AI researcher, a UI/UX designer, or an aspiring founder—NEXUS HACK offers equal ground, mentorship, and resources for all skill tiers.
+            </p>
+          </article>
+
+          <!-- Mentorship Card -->
+          <article class="about-card">
+            <div class="card-icon" aria-hidden="true">👥</div>
+            <h3>Hands-on Mentorship</h3>
+            <p>
+              Receive direct feedback and technical unblocking from 50+ industry veterans, GDG alumni, and cloud architects throughout both days of the sprint, online and in-person.
+            </p>
+          </article>
+        </div>
+
+        <!-- Key Metric Numbers -->
+        <div class="stats-banner" role="region" aria-label="Hackathon Statistics">
+          <div class="stat-box">
+            <span class="stat-number">36</span>
+            <span class="stat-label">Hours of Hacking</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-box">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Registered Builders</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-box">
+            <span class="stat-number">$15K+</span>
+            <span class="stat-label">Sample Reward Pool</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-box">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Specialized Tracks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. TRACKS SECTION (At least 3 Tracks with Titles & Details)
+         ======================================================== -->
+    <section class="tracks-section section-padding" id="tracks">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">COMPETITION DOMAINS</span>
+          <h2 class="section-title">Choose Your Challenge Track</h2>
+          <p class="section-desc">
+            Pick from 4 curated problem arenas designed to test creativity, technical depth, and real-world usefulness.
+          </p>
+        </div>
+
+        <!-- Interactive Track Filter Buttons -->
+        <div class="track-filters" role="tablist" aria-label="Filter Challenge Tracks">
+          <button class="track-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Tracks</button>
+          <button class="track-filter-btn" data-filter="ai" role="tab" aria-selected="false">Multimodal AI</button>
+          <button class="track-filter-btn" data-filter="web" role="tab" aria-selected="false">Next-Gen Web & UX</button>
+          <button class="track-filter-btn" data-filter="social" role="tab" aria-selected="false">Social Impact</button>
+          <button class="track-filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud & Security</button>
+        </div>
+
+        <div class="tracks-grid" id="tracks-grid">
+          <!-- Track 1: AI & Multimodal -->
+          <article class="track-card" data-category="ai">
+            <div class="track-badge">Track 01</div>
+            <div class="track-icon-wrapper" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a8 8 0 0 0-8 8c0 3.36 2.07 6.24 5 7.42V20a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2.58c2.93-1.18 5-4.06 5-7.42a8 8 0 0 0-8-8z"/>
+                <path d="M9 10h.01M15 10h.01M9.5 15a3.5 3.5 0 0 0 5 0"/>
+              </svg>
+            </div>
+            <h3 class="track-title">Multimodal AI & Prompt Engineering</h3>
+            <p class="track-description">
+              Harness LLMs, vision transformers, and speech synthesis to build assistive workflows, generative canvas tools, or intelligent coding co-pilots that run in real-time.
+            </p>
+            <div class="track-tags">
+              <span class="tag">Gemini API</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">RAG</span>
+            </div>
+          </article>
+
+          <!-- Track 2: Next-Gen Web -->
+          <article class="track-card" data-category="web">
+            <div class="track-badge">Track 02</div>
+            <div class="track-icon-wrapper" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#34A853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3 class="track-title">Next-Gen Web, UI & Pixel Craft</h3>
+            <p class="track-description">
+              Push the limits of modern browser capabilities with micro-animations, spatial interfaces, lightning-fast rendering, and accessible user journeys that delight at first glance.
+            </p>
+            <div class="track-tags">
+              <span class="tag">Responsive UI</span>
+              <span class="tag">Micro-Interactions</span>
+              <span class="tag">Accessibility</span>
+            </div>
+          </article>
+
+          <!-- Track 3: Tech for Good -->
+          <article class="track-card" data-category="social">
+            <div class="track-badge">Track 03</div>
+            <div class="track-icon-wrapper" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FBBC04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3 class="track-title">Tech for Social Impact & Sustainability</h3>
+            <p class="track-description">
+              Build high-leverage tools solving community bottlenecks: campus energy optimization, inclusive education platforms for rural learners, or disaster emergency maps.
+            </p>
+            <div class="track-tags">
+              <span class="tag">EdTech</span>
+              <span class="tag">Climate Tech</span>
+              <span class="tag">Civic Solutions</span>
+            </div>
+          </article>
+
+          <!-- Track 4: Cloud & Security -->
+          <article class="track-card" data-category="cloud">
+            <div class="track-badge">Track 04</div>
+            <div class="track-icon-wrapper" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#EA4335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+              </svg>
+            </div>
+            <h3 class="track-title">Open Cloud & Scalable Systems</h3>
+            <p class="track-description">
+              Design fault-tolerant backend architectures, serverless event systems, or automated privacy guards that keep modern web applications secure at scale.
+            </p>
+            <div class="track-tags">
+              <span class="tag">Google Cloud</span>
+              <span class="tag">Serverless</span>
+              <span class="tag">Zero-Trust</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. SCHEDULE SECTION (Readable Timeline, Day Tabs, >=4 Activities)
+         ======================================================== -->
+    <section class="schedule-section section-padding" id="schedule">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">EVENT TIMELINE</span>
+          <h2 class="section-title">The 36-Hour Sprint Roadmap</h2>
+          <p class="section-desc">
+            Organized into dedicated development, mentorship, and demo intervals to keep your team energized and on schedule.
+          </p>
+        </div>
+
+        <!-- Day Switcher Controls -->
+        <div class="schedule-tabs" role="tablist" aria-label="Select Schedule Day">
+          <button class="schedule-tab-btn active" id="tab-day-1" role="tab" aria-selected="true" data-target="schedule-day-1">
+            Day 1: Saturday, Nov 21 (Ideation & Build)
+          </button>
+          <button class="schedule-tab-btn" id="tab-day-2" role="tab" aria-selected="false" data-target="schedule-day-2">
+            Day 2: Sunday, Nov 22 (Mentorship & Demos)
+          </button>
+        </div>
+
+        <!-- Day 1 Schedule Timeline -->
+        <div class="timeline-container active" id="schedule-day-1" role="tabpanel" aria-labelledby="tab-day-1">
+          <div class="timeline-item">
+            <div class="timeline-time">09:00 AM – 10:00 AM</div>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h4>Opening Ceremony & Keynote</h4>
+              <p>Welcome address by GDG community leads, problem statement release, and rules debriefing.</p>
+              <span class="badge-stage">Auditorium & Live Stream</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">10:00 AM – 01:00 PM</div>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h4>Hacking Commences: Phase 1 Architecture</h4>
+              <p>Team ideation, repository initialization, and core data logic scaffolding.</p>
+              <span class="badge-stage">Team Pods</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">02:00 PM – 05:00 PM</div>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h4>Technical Mentorship Check-in #1</h4>
+              <p>Domain mentors visit teams to unblock API keys, database integration, and feature scopes.</p>
+              <span class="badge-stage">1-on-1 Mentorship</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">07:00 PM – 11:59 PM</div>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h4>UI Polish & Midnight Mini-Challenge</h4>
+              <p>Late night sprint focusing on responsive design, micro-animations, and community fun trivia.</p>
+              <span class="badge-stage">Main Arena</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 Schedule Timeline -->
+        <div class="timeline-container" id="schedule-day-2" role="tabpanel" aria-labelledby="tab-day-2" hidden>
+          <div class="timeline-item">
+            <div class="timeline-time">09:00 AM – 11:30 AM</div>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h4>Final Feature Freeze & Deployment Check</h4>
+              <p>Lock code changes, execute automated tests, and deploy live links to Vercel/Netlify.</p>
+              <span class="badge-stage">Dev Freeze</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">12:00 PM – 02:00 PM</div>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h4>Soft Submission & Slide Deck Assembly</h4>
+              <p>Upload repository links, live deployment URLs, and prepare the 5-slide pitch decks.</p>
+              <span class="badge-stage">Portal Submission</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">03:00 PM – 06:00 PM</div>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h4>Live Pitching & Judge Evaluations</h4>
+              <p>Top teams pitch their live prototypes directly to judges in 3-minute rapid demo rounds.</p>
+              <span class="badge-stage">Main Stage</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">06:30 PM – 07:30 PM</div>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h4>Award Ceremony & Closing</h4>
+              <p>Prize announcements, speaker felicitation, and distribution of GDG swag and certificates.</p>
+              <span class="badge-stage">Grand Hall</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. PRIZES SECTION (>= 3 Prize Cards, Sample Values Labeled)
+         ======================================================== -->
+    <section class="prizes-section section-padding" id="prizes">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">REWARDS & RECOGNITION</span>
+          <h2 class="section-title">Prize Pool & Honors</h2>
+          <p class="section-desc">
+            Celebrate exceptional engineering and design with monetary awards, cloud credits, and exclusive mentorship.
+            <br><em class="sample-notice">*(Note: Fictional prize values provided as sample competition details)*</em>
+          </p>
+        </div>
+
+        <div class="prizes-grid">
+          <!-- 2nd Place -->
+          <article class="prize-card rank-silver">
+            <div class="prize-rank-badge">🥈 2nd Place</div>
+            <div class="prize-icon-circle" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                <path d="M4 22h16"/>
+                <path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34c3.48-1.07 6-4.32 6-8.66V3H4v3c0 4.34 2.52 7.59 6 8.66z"/>
+              </svg>
+            </div>
+            <h3 class="prize-title">Runner Up</h3>
+            <div class="prize-amount">$4,000 <span class="prize-val-tag">Sample</span></div>
+            <ul class="prize-perks" role="list">
+              <li>✓ Cash reward ($4,000 Sample)</li>
+              <li>✓ Cloud credits & Pro API tier</li>
+              <li>✓ GDG official merchandise kit</li>
+              <li>✓ Fast-tracked internship referrals</li>
+            </ul>
+          </article>
+
+          <!-- 1st Place (Featured) -->
+          <article class="prize-card rank-gold featured-prize">
+            <div class="featured-ribbon">GRAND CHAMPION</div>
+            <div class="prize-rank-badge">🥇 1st Place</div>
+            <div class="prize-icon-circle" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FBBC04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                <path d="M4 22h16"/>
+                <path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34c3.48-1.07 6-4.32 6-8.66V3H4v3c0 4.34 2.52 7.59 6 8.66z"/>
+              </svg>
+            </div>
+            <h3 class="prize-title">Nexus Hack Grand Winner</h3>
+            <div class="prize-amount">$7,500 <span class="prize-val-tag">Sample</span></div>
+            <ul class="prize-perks" role="list">
+              <li>✓ Top cash prize ($7,500 Sample)</li>
+              <li>✓ Direct VC / Incubator pitch meeting</li>
+              <li>✓ 1-Year Cloud Infrastructure Grant</li>
+              <li>✓ Custom engraved trophy & winner swag</li>
+              <li>✓ Spotlight feature in GDG Newsletter</li>
+            </ul>
+          </article>
+
+          <!-- 3rd Place / Innovation -->
+          <article class="prize-card rank-bronze">
+            <div class="prize-rank-badge">🥉 3rd Place</div>
+            <div class="prize-icon-circle" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                <path d="M4 22h16"/>
+                <path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34c3.48-1.07 6-4.32 6-8.66V3H4v3c0 4.34 2.52 7.59 6 8.66z"/>
+              </svg>
+            </div>
+            <h3 class="prize-title">Creative Innovator</h3>
+            <div class="prize-amount">$2,500 <span class="prize-val-tag">Sample</span></div>
+            <ul class="prize-perks" role="list">
+              <li>✓ Cash prize ($2,500 Sample)</li>
+              <li>✓ Dev tool suite annual licenses</li>
+              <li>✓ GDG branded swag packs</li>
+              <li>✓ Certificate of Exceptional Distinction</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Additional Category Awards Banner -->
+        <div class="track-prizes-box">
+          <h4>🌟 Category Track Awards ($1,000 Each - Sample Details)</h4>
+          <p>Best UI/UX Design • Best Multimodal AI Implementation • Best Social Good Impact Tool</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. SPONSORS SECTION (>= 3 Sponsor Logos Marked as Sample)
+         ======================================================== -->
+    <section class="sponsors-section section-padding" id="sponsors">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">COMMUNITY PARTNERS</span>
+          <h2 class="section-title">Supported by Industry Leaders</h2>
+          <p class="section-desc">
+            Empowered by leading organizations supporting developer education.
+            <br><em class="sample-notice">*(Note: Fictional sample sponsor cards for demonstration)*</em>
+          </p>
+        </div>
+
+        <div class="sponsors-grid">
+          <!-- Sponsor 1 -->
+          <div class="sponsor-card">
+            <span class="sponsor-tier">Diamond Partner</span>
+            <div class="sponsor-brand">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4285F4" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+              <span class="sponsor-name">CloudSphere AI</span>
+            </div>
+            <span class="sample-badge">Sample Sponsor</span>
+          </div>
+
+          <!-- Sponsor 2 -->
+          <div class="sponsor-card">
+            <span class="sponsor-tier">Gold Partner</span>
+            <div class="sponsor-brand">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#34A853" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span class="sponsor-name">DevStream Global</span>
+            </div>
+            <span class="sample-badge">Sample Sponsor</span>
+          </div>
+
+          <!-- Sponsor 3 -->
+          <div class="sponsor-card">
+            <span class="sponsor-tier">Gold Partner</span>
+            <div class="sponsor-brand">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FBBC04" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+              <span class="sponsor-name">PixelForge Labs</span>
+            </div>
+            <span class="sample-badge">Sample Sponsor</span>
+          </div>
+
+          <!-- Sponsor 4 -->
+          <div class="sponsor-card">
+            <span class="sponsor-tier">Community Partner</span>
+            <div class="sponsor-brand">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#EA4335" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span class="sponsor-name">NextHacker Hub</span>
+            </div>
+            <span class="sample-badge">Sample Sponsor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         8. FAQ SECTION (Accordion for Common Queries)
+         ======================================================== -->
+    <section class="faq-section section-padding" id="faq">
+      <div class="container faq-container">
+        <div class="section-header text-center">
+          <span class="section-tag">QUESTIONS & ANSWERS</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Everything you need to know before stepping onto the hacking floor.</p>
+        </div>
+
+        <div class="faq-accordion" id="faq-accordion">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is participation free for students?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Yes, 100%! Registration, workshops, mentorship sessions, meals for in-person attendees, and participant swag packs are completely free of charge thanks to our sponsors.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is the team size limit?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>You can compete as a solo developer or in teams of up to 4 members. If you don't have a team yet, join our Discord matching channel before kickoff.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I participate remotely / online?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Yes! NEXUS HACK 2026 is fully hybrid. Remote participants will have access to live-streamed keynotes, digital Discord mentorship rooms, and virtual demo evaluation sessions.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What technologies can we use?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Any software stack is welcome! Whether you are building web apps, mobile solutions, AI agents, or smart hardware interfaces, you own 100% of your intellectual property.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         9. FINAL CTA SECTION (Strong Registration Call & Date Reminder)
+         ======================================================== -->
+    <section class="cta-section" id="register-cta">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-content">
+            <span class="cta-badge">LIMITED SLOTS AVAILABLE</span>
+            <h2 class="cta-title">Ready to Transform Your Prompts into Pixels?</h2>
+            <p class="cta-text">
+              Join 500+ student developers this November 21–22, 2026. Free registration closes when capacity is reached.
+            </p>
+            <div class="cta-reminder">
+              <span class="reminder-item">📍 Hybrid: Campus Tech Arena + Online</span>
+              <span class="reminder-item">📅 Nov 21–22, 2026</span>
+            </div>
+          </div>
+          <div class="cta-action">
+            <button class="btn btn-primary btn-xl open-modal-btn">
+              Claim Your Free Spot
+              <svg class="btn-arrow" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <span class="cta-note">Takes under 60 seconds • Instant confirmation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       10. FOOTER (Identity, Quick Links, Ethics, Socials)
+       ======================================================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col footer-brand-col">
+        <div class="brand">
+          <span class="brand-text">
+            <span class="brand-name">NEXUS<span class="highlight">HACK</span></span>
+            <span class="brand-badge">2026</span>
+          </span>
+        </div>
+        <p class="footer-bio">
+          An initiative organized by the GDG Student Developer Community (Sample Chapter) to foster hands-on engineering, prompt literacy, and inclusive technology development.
+        </p>
+        <p class="footer-disclaimer">
+          <em>*Sample project created for GDG Prompt 2 Pixel Round 2 competition. All prize and partner trademarks are fictional illustrations.*</em>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="#about">About Event</a></li>
+          <li><a href="#tracks">Challenge Tracks</a></li>
+          <li><a href="#schedule">Sprint Schedule</a></li>
+          <li><a href="#prizes">Prizes & Perks</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Community</h4>
+        <ul class="footer-links" role="list">
+          <li><a href="#sponsors">Partners</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://developers.google.com/community/gdg" target="_blank" rel="noopener">GDG Global</a></li>
+          <li><a href="#hero">Back to Top ↑</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Connect</h4>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="GitHub Community Link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Discord Community Link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="X / Twitter Community Link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 NEXUS HACK. Prompt to Production. Built with Semantic HTML5, CSS3 & JavaScript.</p>
+        <p class="built-with">GDG Prompt 2 Pixel • Round 2 Prototype</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       11. DEMO REGISTRATION MODAL (Accessible Dialog + Validation)
+       ======================================================== -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close registration modal">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-tag">NEXUS HACK 2026 REGISTRATION</span>
+        <h3 id="modal-title">Secure Your Team's Spot</h3>
+        <p class="modal-desc">Fill out the quick registration below. Instant demo confirmation.</p>
+        <div class="demo-badge-note">
+          ℹ️ <strong>Demo Notice:</strong> This is a front-end client-side validated demo form for the hackathon prototype.
+        </div>
+      </div>
+
+      <form id="registration-form" class="reg-form" novalidate>
+        <div class="form-group">
+          <label for="full-name">Full Name *</label>
+          <input type="text" id="full-name" name="fullName" required placeholder="e.g. Alex Rivera" class="form-input">
+          <span class="error-msg" id="name-error">Please enter your full name.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="email-address">Email Address *</label>
+          <input type="email" id="email-address" name="email" required placeholder="alex@university.edu" class="form-input">
+          <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-half">
+            <label for="team-name">Team Name *</label>
+            <input type="text" id="team-name" name="teamName" required placeholder="e.g. PixelMasters" class="form-input">
+            <span class="error-msg" id="team-error">Please provide a team name.</span>
+          </div>
+
+          <div class="form-group col-half">
+            <label for="team-size">Team Size *</label>
+            <select id="team-size" name="teamSize" class="form-input">
+              <option value="1">Solo Hacker (1)</option>
+              <option value="2" selected>Duo (2 members)</option>
+              <option value="3">Trio (3 members)</option>
+              <option value="4">Full Squad (4 members)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="selected-track">Preferred Challenge Track *</label>
+          <select id="selected-track" name="track" class="form-input">
+            <option value="ai">Track 01: Multimodal AI & Prompt Engineering</option>
+            <option value="web">Track 02: Next-Gen Web, UI & Pixel Craft</option>
+            <option value="social">Track 03: Tech for Social Impact & Sustainability</option>
+            <option value="cloud">Track 04: Open Cloud & Scalable Systems</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="accept-code" required>
+            <span>I agree to abide by the Hackathon Code of Conduct and community guidelines.</span>
+          </label>
+          <span class="error-msg" id="terms-error">You must accept the guidelines to participate.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-btn">
+          Complete Demo Registration
+        </button>
+      </form>
+
+      <!-- Success State (Shown after valid submission) -->
+      <div class="reg-success" id="reg-success" hidden>
+        <div class="success-icon-wrapper" aria-hidden="true">🎉</div>
+        <h3>You are Officially Registered!</h3>
+        <p>Welcome to <strong>NEXUS HACK 2026</strong>. A confirmation pass preview has been generated for your team.</p>
+        <div class="pass-preview">
+          <div class="pass-row"><span>Team:</span> <strong id="pass-team">PixelMasters</strong></div>
+          <div class="pass-row"><span>Track:</span> <strong id="pass-track">Multimodal AI</strong></div>
+          <div class="pass-row"><span>Access:</span> <span class="badge-stage">Hybrid All-Access</span></div>
+        </div>
+        <button class="btn btn-secondary btn-block" id="success-done-btn">Back to Landing Page</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Component -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
